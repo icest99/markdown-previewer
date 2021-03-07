@@ -100,11 +100,10 @@ function App() {
   return (
     <div style={{ overflowX: "hidden", overflowY: "hidden" }}>
       <CssBaseline />
-      <Grid container direction="rows" alignItems="center" spacing={2}>
+      <Grid container direction="column" alignItems="center" spacing={5}>
         <Grid
           item
-          direction="columns"
-          xs={6}
+          xs={12}
           style={{
             textAlign: "center",
             maxHeight: "100vh",
@@ -119,7 +118,8 @@ function App() {
             rowsMin="10"
             style={{
               resize: "none",
-              minWidth: "35vw",
+              minWidth: "50vw",
+              fontSize: "1rem",
             }}
           >
             {initialText}
@@ -127,13 +127,17 @@ function App() {
         </Grid>
         <Grid
           item
-          xs={6}
+          xs={12}
           style={{
             overflowX: "hidden",
             maxHeight: "100vh",
+            marginBottom: "5rem",
+            minWidth: "85%",
           }}
         >
-          <Preview markdown={text} />
+          <Paper style={{ padding: "2rem" }}>
+            <Preview markdown={text} />
+          </Paper>
         </Grid>
       </Grid>
     </div>
